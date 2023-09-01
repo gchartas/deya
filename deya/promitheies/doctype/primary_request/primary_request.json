@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-09-01 20:22:29.641920",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "column_break_iudb9",
+  "gpn",
+  "column_break_seznl",
+  "posting_date",
+  "section_break_v6pdj",
+  "material_request",
+  "subject",
+  "pr_tmpl",
+  "column_break_3huod",
+  "contact",
+  "to",
+  "section_break_52zjg",
+  "subject_text",
+  "text",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "PrReq-.YY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "options": "PrReq-.YY.-.####",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Primary Request",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "-",
+   "fieldname": "gpn",
+   "fieldtype": "Data",
+   "label": "General Protocol Number"
+  },
+  {
+   "fieldname": "column_break_iudb9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_seznl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_v6pdj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pr_tmpl",
+   "fieldtype": "Data",
+   "label": "Primary Request Template"
+  },
+  {
+   "fieldname": "section_break_52zjg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "text",
+   "fieldtype": "Text Editor",
+   "label": "Text"
+  },
+  {
+   "fieldname": "material_request",
+   "fieldtype": "Link",
+   "label": "Material Request",
+   "options": "Material Request"
+  },
+  {
+   "fieldname": "subject_text",
+   "fieldtype": "Data",
+   "label": "Subject Text"
+  },
+  {
+   "fieldname": "column_break_3huod",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Small Text",
+   "label": "To"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-09-01 20:46:24.533094",
+ "modified_by": "Administrator",
+ "module": "Promitheies",
+ "name": "Primary Request",
+ "name_case": "Title Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "subject"
+}

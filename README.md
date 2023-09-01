@@ -1,6 +1,6 @@
-## Logismiko Ypostirixis DEYA
+## Λογισμικό Υποστήριξης ΔΕΥΑ
 
-Ypostirixi Leitourgion DEYA
+Υποστήριξη Λειτουργιών ΔΕΥΑ
 
 #### License
 

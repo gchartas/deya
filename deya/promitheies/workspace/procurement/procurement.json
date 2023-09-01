@@ -8,6 +8,7 @@
  "doctype": "Workspace",
  "extends_another_page": 0,
  "hide_custom": 0,
+ "icon": "buying",
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
@@ -15,6 +16,7 @@
  "links": [
   {
    "hidden": 0,
+   "icon": "down",
    "is_query_report": 0,
    "label": "\u0391\u03bd\u03ac\u03b3\u03ba\u03b7 \u03a0\u03c1\u03bf\u03bc\u03ae\u03b8\u03b5\u03b9\u03b1\u03c2",
    "link_type": "DocType",
@@ -77,6 +79,7 @@
   },
   {
    "hidden": 0,
+   "icon": "quantity-1",
    "is_query_report": 0,
    "label": "\u0391\u03bd\u03ac\u03b8\u03b5\u03c3\u03b7 \u03b3\u03b9\u03b1 \u0391\u03b3\u03bf\u03c1\u03ac",
    "link_type": "DocType",
@@ -114,7 +117,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "\u0394\u03b5\u03bb\u03c4\u03af\u03bf \u0391\u03c0\u03bf\u03c3\u03c4\u03bf\u03bb\u03ae\u03c2",
-   "link_to": "Delivery Note",
+   "link_to": "Purchase Receipt",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -127,9 +130,27 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "icon": "tool",
+   "is_query_report": 0,
+   "label": "Setup",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u03a5\u03c0\u03cc\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1 \u03a0\u03c1\u03c9\u03c4\u03bf\u03b3\u03b5\u03bd\u03bf\u03cd\u03c2",
+   "link_to": "Primary Request Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-09-01 18:07:38.620120",
+ "modified": "2023-09-01 20:41:54.041794",
  "modified_by": "Administrator",
  "module": "Promitheies",
  "name": "Procurement",
