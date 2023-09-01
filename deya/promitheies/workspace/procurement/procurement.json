@@ -1,0 +1,140 @@
+{
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-09-01 17:52:24.167360",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Procurement",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0391\u03bd\u03ac\u03b3\u03ba\u03b7 \u03a0\u03c1\u03bf\u03bc\u03ae\u03b8\u03b5\u03b9\u03b1\u03c2",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0388\u03c1\u03b5\u03c5\u03bd\u03b1 \u0391\u03b3\u03bf\u03c1\u03ac\u03c2",
+   "link_to": "Material Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0395\u03b9\u03c3\u03ae\u03b3\u03b7\u03c3\u03b7 \u03a0\u03c1\u03bf\u03bc\u03ae\u03b8\u03b5\u03b9\u03b1\u03c2",
+   "link_to": "Material Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0391\u03bd\u03ac\u03bb\u03b7\u03c8\u03b7 \u03a5\u03c0\u03bf\u03c7\u03c1\u03ad\u03c9\u03c3\u03b7\u03c2",
+   "link_to": "Material Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0396\u03ae\u03c4\u03b7\u03c3\u03b7 \u03a0\u03c1\u03bf\u03c3\u03c6\u03bf\u03c1\u03ce\u03bd",
+   "link_to": "Request for Quotation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u03a0\u03c1\u03bf\u03c3\u03c6\u03bf\u03c1\u03ac \u03a0\u03c1\u03bf\u03bc\u03b7\u03b8\u03b5\u03c5\u03c4\u03ae",
+   "link_to": "Supplier Quotation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u03a3\u03c5\u03b3\u03ba\u03c1\u03af\u03c3\u03b5\u03b9\u03c2 \u03a0\u03c1\u03bf\u03c3\u03c6\u03bf\u03c1\u03ce\u03bd",
+   "link_to": "Supplier Quotation Comparison",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0391\u03bd\u03ac\u03b8\u03b5\u03c3\u03b7 \u03b3\u03b9\u03b1 \u0391\u03b3\u03bf\u03c1\u03ac",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0395\u03b9\u03c3\u03ae\u03b3\u03b7\u03c3\u03b7 \u0391\u03bd\u03ac\u03b8\u03b5\u03c3\u03b7\u03c2",
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0391\u03c0\u03cc\u03c6\u03b1\u03c3\u03b7 \u0391\u03bd\u03ac\u03b8\u03b5\u03c3\u03b7\u03c2",
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u03a0\u03b1\u03c1\u03b1\u03b3\u03b3\u03b5\u03bb\u03af\u03b1 \u0391\u03b3\u03bf\u03c1\u03ac",
+   "link_to": "Purchase Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0394\u03b5\u03bb\u03c4\u03af\u03bf \u0391\u03c0\u03bf\u03c3\u03c4\u03bf\u03bb\u03ae\u03c2",
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u03a4\u03b9\u03bc\u03bf\u03bb\u03cc\u03b3\u03b9\u03bf",
+   "link_to": "Purchase Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-09-01 18:07:38.620120",
+ "modified_by": "Administrator",
+ "module": "Promitheies",
+ "name": "Procurement",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": []
+}
