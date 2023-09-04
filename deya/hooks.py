@@ -102,6 +102,18 @@ app_license = "MIT"
 #		"on_trash": "method"
 #	}
 # }
+# hooks.py
+
+doc_events = {
+    "Primary Request": {
+        "before_save": [
+            "deya.promitheies.doctype.primary_request.primary_request.summarize_expense_accounts",
+            "deya.promitheies.doctype.primary_request.primary_request.save_as_pdf"
+		]
+    }
+}
+
+
 
 # Scheduled Tasks
 # ---------------

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "title",
+ "autoname": "field:title",
  "creation": "2023-09-01 20:38:22.363420",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -26,12 +26,13 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Title"
+   "label": "Title",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-01 20:40:04.440551",
+ "modified": "2023-09-01 21:09:40.384736",
  "modified_by": "Administrator",
  "module": "Promitheies",
  "name": "Primary Request Template",
@@ -52,6 +53,5 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC",
- "title_field": "title"
+ "sort_order": "DESC"
 }

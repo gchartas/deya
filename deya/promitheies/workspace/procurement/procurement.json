@@ -36,7 +36,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "\u0395\u03b9\u03c3\u03ae\u03b3\u03b7\u03c3\u03b7 \u03a0\u03c1\u03bf\u03bc\u03ae\u03b8\u03b5\u03b9\u03b1\u03c2",
-   "link_to": "Material Request",
+   "link_to": "Primary Request",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -150,7 +150,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-09-01 20:41:54.041794",
+ "modified": "2023-09-02 10:58:49.762029",
  "modified_by": "Administrator",
  "module": "Promitheies",
  "name": "Procurement",

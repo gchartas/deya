@@ -9,6 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "letter_head",
   "column_break_iudb9",
   "gpn",
   "column_break_seznl",
@@ -19,10 +20,24 @@
   "pr_tmpl",
   "column_break_3huod",
   "contact",
+  "email_id",
   "to",
   "section_break_52zjg",
   "subject_text",
   "text",
+  "items",
+  "section_break_at8ly",
+  "column_break_hyto8",
+  "column_break_aa95q",
+  "subtotal",
+  "vat",
+  "total",
+  "section_break_2yvn8",
+  "cpv",
+  "account_sum",
+  "terms",
+  "signature",
+  "pdf_attachment",
   "amended_from"
  ],
  "fields": [
@@ -38,13 +53,15 @@
   {
    "fieldname": "subject",
    "fieldtype": "Data",
-   "label": "Subject"
+   "label": "Subject",
+   "print_hide": 1
   },
   {
    "default": "Today",
    "fieldname": "posting_date",
    "fieldtype": "Date",
-   "label": "Posting Date"
+   "label": "Posting Date",
+   "print_hide": 1
   },
   {
    "fieldname": "amended_from",
@@ -60,7 +77,8 @@
    "default": "-",
    "fieldname": "gpn",
    "fieldtype": "Data",
-   "label": "General Protocol Number"
+   "label": "General Protocol Number",
+   "print_hide": 1
   },
   {
    "fieldname": "column_break_iudb9",
@@ -76,8 +94,10 @@
   },
   {
    "fieldname": "pr_tmpl",
-   "fieldtype": "Data",
-   "label": "Primary Request Template"
+   "fieldtype": "Link",
+   "label": "Primary Request Template",
+   "options": "Primary Request Template",
+   "print_hide": 1
   },
   {
    "fieldname": "section_break_52zjg",
@@ -92,7 +112,8 @@
    "fieldname": "material_request",
    "fieldtype": "Link",
    "label": "Material Request",
-   "options": "Material Request"
+   "options": "Material Request",
+   "print_hide": 1
   },
   {
    "fieldname": "subject_text",
@@ -107,18 +128,114 @@
    "fieldname": "contact",
    "fieldtype": "Link",
    "label": "Contact",
-   "options": "Contact"
+   "options": "Contact",
+   "print_hide": 1
   },
   {
    "fieldname": "to",
    "fieldtype": "Small Text",
    "label": "To"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "label": "Letter Head",
+   "options": "Letter Head",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Material Request Item"
+  },
+  {
+   "fieldname": "section_break_at8ly",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hyto8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_aa95q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "material_request.subtotal",
+   "fetch_if_empty": 1,
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "material_request.vat",
+   "fetch_if_empty": 1,
+   "fieldname": "vat",
+   "fieldtype": "Currency",
+   "label": "VAT",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "material_request.total",
+   "fetch_if_empty": 1,
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_2yvn8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "account_sum",
+   "fieldtype": "Text",
+   "label": "Account with Cost",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "material_request.cpv",
+   "fetch_if_empty": 1,
+   "fieldname": "cpv",
+   "fieldtype": "Data",
+   "label": "CPV"
+  },
+  {
+   "fetch_from": "material_request.terms",
+   "fetch_if_empty": 1,
+   "fieldname": "terms",
+   "fieldtype": "Text Editor",
+   "label": "Terms and Conditions Content"
+  },
+  {
+   "fetch_from": "contact.email_id",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Email ID",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Table",
+   "label": "Signatures",
+   "options": "Signature Table"
+  },
+  {
+   "fieldname": "pdf_attachment",
+   "fieldtype": "Attach",
+   "label": "PDF attachment"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-01 20:46:24.533094",
+ "modified": "2023-09-04 19:08:25.197954",
  "modified_by": "Administrator",
  "module": "Promitheies",
  "name": "Primary Request",
@@ -126,15 +243,77 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
+   "set_user_permissions": 1,
    "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock User",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
