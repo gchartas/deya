@@ -3,6 +3,13 @@
 
 frappe.ui.form.on('Primary Request', {
     refresh: function(frm, cdt, cdn) {
+        frm.fields_dict.material_request.get_query = function(doc) {
+            return {
+                filters: {
+                    "status": "Pending"
+                }
+            };
+        };
         calculate_totals(frm);
     },
     items_add: function(frm, cdt, cdn) {

@@ -106,10 +106,10 @@ app_license = "MIT"
 
 doc_events = {
     "Primary Request": {
-        "before_save": [
-            "deya.promitheies.doctype.primary_request.primary_request.summarize_expense_accounts",
-            "deya.promitheies.doctype.primary_request.primary_request.save_as_pdf"
-		]
+        "before_save": "deya.promitheies.doctype.primary_request.primary_request.summarize_expense_accounts",
+        "on_update" : "deya.promitheies.doctype.primary_request.primary_request.save_as_pdf",
+        "on_update_after_submit": "deya.promitheies.doctype.primary_request.primary_request.save_as_pdf"
+		
     }
 }
 

@@ -41,15 +41,16 @@ from frappe.utils.file_manager import save_file
 from frappe.utils.pdf import get_pdf
 from frappe.utils.print_format import download_pdf
 
+
 def save_as_pdf(doc, method):
 
     # Delete the existing attachment if it exists
     if doc.pdf_attachment:
         existing_file_url = doc.pdf_attachment
-        existing_file = frappe.get_list("File", filters={"file_url": existing_file_url}, fields=["name"])
-        if existing_file:
-            frappe.delete_doc("File", existing_file[0].name)
-            
+        existing_files = frappe.get_list("File", filters={"file_url": existing_file_url}, fields=["name"])
+        for file in existing_files:
+            frappe.delete_doc("File", file.name)
+
     # Get HTML format of the document
     html = frappe.get_print(doc.doctype, doc.name, print_format="Primary Request")
 
@@ -64,7 +65,8 @@ def save_as_pdf(doc, method):
 
     # Attach the file to the `pdf_attachment` field and save the document
     doc.pdf_attachment = file.file_url
-    doc.db_update()
 
-    return "PDF generated and attached successfully."
+    # Update the document
+    doc.db_update()
+    frappe.msgprint("PDF generated and attached successfully.")
 
