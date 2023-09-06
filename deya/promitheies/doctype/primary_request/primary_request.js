@@ -5,7 +5,7 @@ frappe.ui.form.on('Primary Request', {
     refresh: function(frm, cdt, cdn) {
         frm.add_custom_button('Generate PDF', function() {
             frappe.call({
-                method: 'deya.promitheies.doctype.primary_request.primary_request.save_as_pdf',
+                method: 'deya.promitheies.doctype.primary_request.primary_request.save_as_pdf_button_click',
                 args: {
                     'doc_name': frm.doc.name
                 },

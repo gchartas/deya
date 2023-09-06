@@ -42,9 +42,7 @@ from frappe.utils.pdf import get_pdf
 from frappe.utils.print_format import download_pdf
 
 @frappe.whitelist()
-def save_as_pdf(doc, method=None):
-    if isinstance(doc, str):
-        doc = frappe._dict(json.loads(doc))
+def save_as_pdf_before_submit(doc, method):
 
     # Delete the existing attachment if it exists
     if doc.pdf_attachment:
@@ -72,3 +70,35 @@ def save_as_pdf(doc, method=None):
     doc.db_update()
     frappe.msgprint("PDF generated and attached successfully.")
 
+@frappe.whitelist()
+def save_as_pdf_button_click(doc_name):
+    if doc_name:
+        doc = frappe.get_doc("Primary Request", doc_name)
+    else:
+        frappe.throw(_("doc_name must be provided."))
+
+    # Delete the existing attachment if it exists
+    if doc.pdf_attachment:
+        existing_file_url = doc.pdf_attachment
+        existing_files = frappe.get_list("File", filters={"file_url": existing_file_url}, fields=["name"])
+        for file in existing_files:
+            frappe.delete_doc("File", file.name)
+
+    # Get HTML format of the document
+    html = frappe.get_print(doc.doctype, doc.name, print_format="Primary Request")
+
+    # Convert HTML to PDF
+    pdf = get_pdf(html)
+
+    # Create a filename
+    filename = f'{doc.name.replace(" ", "-")}.pdf'
+
+    # Save the file and link it to the document
+    file = save_file(filename, pdf, "Primary Request", doc.name, is_private=1)
+
+    # Attach the file to the `pdf_attachment` field and save the document
+    doc.pdf_attachment = file.file_url
+
+    # Update the document
+    doc.save()
+    frappe.msgprint("PDF generated and attached successfully.")
