@@ -41,8 +41,10 @@ from frappe.utils.file_manager import save_file
 from frappe.utils.pdf import get_pdf
 from frappe.utils.print_format import download_pdf
 
-
-def save_as_pdf(doc, method):
+@frappe.whitelist()
+def save_as_pdf(doc, method=None):
+    if isinstance(doc, str):
+        doc = frappe._dict(json.loads(doc))
 
     # Delete the existing attachment if it exists
     if doc.pdf_attachment:

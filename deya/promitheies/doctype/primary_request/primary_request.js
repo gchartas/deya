@@ -3,6 +3,19 @@
 
 frappe.ui.form.on('Primary Request', {
     refresh: function(frm, cdt, cdn) {
+        frm.add_custom_button('Generate PDF', function() {
+            frappe.call({
+                method: 'deya.promitheies.doctype.primary_request.primary_request.save_as_pdf',
+                args: {
+                    'doc_name': frm.doc.name
+                },
+                callback: function(r) {
+                    if (r.message) {
+                        frappe.msgprint(r.message);
+                    }
+                }
+            });
+        });
         frm.fields_dict.material_request.get_query = function(doc) {
             return {
                 filters: {
